@@ -1,0 +1,39 @@
+{
+  "name": "what-to-watch",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Личный проект «Что посмотреть» от HTML Academy",
+  "scripts": {
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server",
+    "eslint": "eslint --ext .jsx --ext .js src/",
+    "test": "npm run eslint"
+  },
+  "devDependencies": {
+    "@babel/core": "7.12.3",
+    "@babel/plugin-proposal-object-rest-spread": "7.6.2",
+    "@babel/preset-env": "7.6.3",
+    "@babel/preset-react": "7.6.3",
+    "babel-eslint": "10.0.3",
+    "babel-loader": "8.1.0",
+    "classnames": "2.2.6",
+    "eslint": "5.13.0",
+    "eslint-config-htmlacademy": "0.5.2",
+    "eslint-import-resolver-webpack": "0.11.1",
+    "eslint-plugin-babel": "5.3.0",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-react": "7.16.0",
+    "prop-types": "15.7.2",
+    "webpack": "4.41.1",
+    "webpack-cli": "3.3.9",
+    "webpack-dev-server": "3.8.2"
+  },
+  "engines": {
+    "node": "10"
+  },
+  "dependencies": {
+    "parcel-bundler": "^1.12.4",
+    "react": "16.10.2",
+    "react-dom": "16.10.2"
+  }
+}
