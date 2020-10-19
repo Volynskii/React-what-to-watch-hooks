@@ -1,7 +1,7 @@
 import React from "react";
 import cx from "classnames";
 
-import Button from "./button";
+import Button from "../button";
 
 const PlusButton = ({ className, isAdded, ...props }) => {
   const plusButtonClassName = cx(`btn--list`, className);
