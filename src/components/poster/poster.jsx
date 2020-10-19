@@ -1,8 +1,9 @@
 import React from "react";
+import cx from "classnames";
 
-const Poster = () => {
+const Poster = ({big}) => {
   return (
-    <div className="movie-card__poster">
+    <div style={{border: "1px solid red"}} className={cx(`movie-card__poster`, { [`movie-card__poster--big`]: big })}>
       <img
         src="img/the-grand-budapest-hotel-poster.jpg"
         alt="The Grand Budapest Hotel poster"
@@ -11,6 +12,10 @@ const Poster = () => {
       />
     </div>
   );
+};
+
+Poster.defaultProps = {
+  big: false
 };
 
 export default Poster;
