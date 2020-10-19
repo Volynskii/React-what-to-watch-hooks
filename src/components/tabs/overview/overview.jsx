@@ -1,6 +1,6 @@
 import React from "react";
 
-const Overview = ({ className }) => {
+const Overview = () => {
   return (
     <>
       <div className="movie-rating">

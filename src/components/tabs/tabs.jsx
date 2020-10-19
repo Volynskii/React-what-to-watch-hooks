@@ -1,26 +1,50 @@
 import React, { useState } from "react";
-import { arrayOf, shape, string, node } from "prop-types";
 import cx from "classnames";
 
+import Details from "./details/details";
+import Overview from "./overview/overview";
+import Reviews from "./reviews/reviews";
 import { capitalize } from "../../helpers/capitalize";
 
-const Tabs = ({ items }) => {
-  const [current, setCurrent] = useState(items[0] || {});
+const TabsItems = {
+  OVERVIEW: `overview`,
+  DETAILS: `details`,
+  REVIEWS: `reviews`
+};
+
+const Tabs = () => {
+  const [current, setCurrent] = useState(TabsItems.OVERVIEW);
 
   const handleTabClick = (evt, tab) => {
     evt.preventDefault();
     setCurrent(tab);
   };
 
+  const getContent = (name) => {
+    switch (name) {
+      case TabsItems.OVERVIEW:
+        return <Overview />;
+
+      case TabsItems.DETAILS:
+        return <Details />;
+
+      case TabsItems.REVIEWS:
+        return <Reviews />;
+
+      default:
+        return null;
+    }
+  };
+
   return (
     <div className="movie-card__desc">
       <nav className="movie-nav movie-card__nav">
         <ul className="movie-nav__list">
-          {items.map((item, index) => (
+          {Object.values(TabsItems).map((item, index) => (
             <li
               key={index}
               className={cx(`movie-nav__item`, {
-                [`movie-nav__item--active`]: current.name === item.name
+                [`movie-nav__item--active`]: current === item.name
               })}
             >
               <a
@@ -28,24 +52,17 @@ const Tabs = ({ items }) => {
                 className="movie-nav__link"
                 onClick={(evt) => handleTabClick(evt, item)}
               >
-                {capitalize(item.name)}
+                {capitalize(item)}
               </a>
             </li>
           ))}
         </ul>
       </nav>
-      {current.content}
+      {getContent(current)}
     </div>
   );
 };
 
-Tabs.propTypes = {
-  items: arrayOf(
-    shape({
-      name: string.isRequired,
-      content: node.isRequired
-    })
-  ).isRequired
-};
+
 
 export default Tabs;
