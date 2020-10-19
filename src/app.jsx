@@ -1,6 +1,6 @@
 import React from "react";
-import MainPage from "./pages/main-page/main-page.jsx";
-import DetailsPage from "./pages/details-page/details-page/details-page.jsx";
+import MainPage from "./pages/main-page/main-page";
+import DetailsPage from "./pages/details-page/details-page";
 
 const getPage = () => {
   switch (location.pathname) {
