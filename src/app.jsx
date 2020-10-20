@@ -1,4 +1,4 @@
-import React, {createContext} from "react";
+import React, { createContext } from "react";
 import MainPage from "./pages/main-page/main-page";
 import DetailsPage from "./pages/details-page/details-page";
 

@@ -2,61 +2,73 @@ export const data = [
   {
     id: 1,
     title: `Fantastic Beasts: The Crimes of Grindelwald`,
-    imageSrc: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`
+    poster: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
+    trailer: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
   },
   {
     id: 2,
     title: `Bohemian Rhapsody`,
-    imageSrc: `img/bohemian-rhapsody.jpg`
+    poster: `img/bohemian-rhapsody.jpg`,
+    trailer: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
   },
   {
     id: 3,
     title: `Macbeth`,
-    imageSrc: `img/macbeth.jpg`
+    poster: `img/macbeth.jpg`,
+    trailer: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
   },
   {
     id: 4,
     title: `Aviator`,
-    imageSrc: `img/aviator.jpg`
+    poster: `img/aviator.jpg`,
+    trailer: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
   },
   {
     id: 5,
     title: `We need to talk about Kevin`,
-    imageSrc: `img/we-need-to-talk-about-kevin.jpg`
+    poster: `img/we-need-to-talk-about-kevin.jpg`,
+    trailer: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
   },
   {
     id: 6,
     title: `What We Do in the Shadows`,
-    imageSrc: `img/what-we-do-in-the-shadows.jpg`
+    poster: `img/what-we-do-in-the-shadows.jpg`,
+    trailer: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
   },
   {
     id: 7,
     title: `Revenant`,
-    imageSrc: `img/revenant.jpg`
+    poster: `img/revenant.jpg`,
+    trailer: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
   },
   {
     id: 8,
     title: `Johnny English`,
-    imageSrc: `img/johnny-english.jpg`
+    poster: `img/johnny-english.jpg`,
+    trailer: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
   },
   {
     id: 9,
     title: `Shutter Island`,
-    imageSrc: `img/shutter-island.jpg`
+    poster: `img/shutter-island.jpg`,
+    trailer: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
   },
   {
     id: 10,
     title: `Pulp Fiction`,
-    imageSrc: `img/pulp-fiction.jpg`
+    poster: `img/pulp-fiction.jpg`,
+    trailer: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
   },
   {
     id: 11,
     title: `No Country for Old Men`,
-    imageSrc: `img/no-country-for-old-men.jpg`
+    poster: `img/no-country-for-old-men.jpg`,
+    trailer: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
   },
   {
     id: 12,
     title: `Snatch`,
-    imageSrc: `img/snatch.jpg`
+    poster: `img/snatch.jpg`,
+    trailer: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
   }
 ];

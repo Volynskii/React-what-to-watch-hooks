@@ -4,6 +4,7 @@ import cx from "classnames";
 import Details from "./details/details";
 import Overview from "./overview/overview";
 import Reviews from "./reviews/reviews";
+
 import { capitalize } from "../../helpers/capitalize";
 
 const TabsItems = {
@@ -62,7 +63,6 @@ const Tabs = () => {
     </div>
   );
 };
-
 
 
 export default Tabs;
