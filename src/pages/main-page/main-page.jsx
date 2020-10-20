@@ -1,7 +1,7 @@
 import React from "react";
 import SvgSprite from "../../components/svg-sprite/svg-sprite";
 import Catalog from "../../modules/catalog/catalog.jsx";
-import MovieCardBackground from "../../components/movie-card-background/movie-card-background";
+import CardBackground from "@components/card-background/card-background";
 import CardManage from "../../components/card-manage/card-manage";
 import Header from "../../components/header/header";
 import Footer from "../../components/footer/footer.jsx";
@@ -13,7 +13,7 @@ const MainPage = () => {
       <h1 className="visually-hidden">WTW</h1>
       <SvgSprite />
       <section className="movie-card">
-        <MovieCardBackground />
+        <CardBackground />
         <Header />
         <div className="movie-card__wrap">
           <div className="movie-card__info">

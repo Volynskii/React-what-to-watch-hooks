@@ -1,25 +1,20 @@
-import React from "react";
-import ShowMoreButton from "../../components/buttons/show-more-button";
+import React, { useContext } from "react";
 
-import { data } from "../../api/mocks";
+import ShowMoreButton from "../../components/buttons/show-more-button/show-more-button";
 import MoviesFilter from "../../components/movies-filter/movies-filter";
-import MovieCard from "../../components/movie-card/movie-card";
+import MoviesList from "../../components/movies-list/movies-list";
+
+import { Context } from "../../app";
 
 const Catalog = () => {
+  const { data } = useContext(Context);
+
   return (
     <section className="catalog">
       <h2 className="catalog__title visually-hidden">Catalog</h2>
       <MoviesFilter />
-      <div className="catalog__movies-list">
-        {data.map((item) => (
-          <MovieCard
-            key={item.id}
-            className="catalog__movies-card"
-            title={item.title}
-            imageSrc={item.imageSrc}
-          />
-        ))}
-      </div>
+      <MoviesList movies={data} />
+
       <div className="catalog__more">
         <ShowMoreButton />
       </div>

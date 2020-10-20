@@ -1,6 +1,6 @@
 import React from "react";
 
-const MovieCardBackground = () => {
+const CardBackground = () => {
   return (
     <div className="movie-card__bg">
       <img src="img/bg-the-grand-budapest-hotel.jpg" alt="The Grand Budapest Hotel" />
@@ -8,4 +8,4 @@ const MovieCardBackground = () => {
   );
 };
 
-export default MovieCardBackground;
+export default CardBackground;
