@@ -1,3 +1,7 @@
 .small-movie-card {
   cursor: pointer;
 }
+
+.catalog__movies-list {
+  min-height: 175px;
+}

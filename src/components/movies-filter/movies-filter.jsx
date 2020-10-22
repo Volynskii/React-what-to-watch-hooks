@@ -1,30 +1,41 @@
 import React from "react";
+import { array, func } from "prop-types";
 import cx from "classnames";
+import { GenresMap } from "../../api/transform/transformMovies";
 
 export const filters = [
-  { id: 1, name: `All genres` },
-  { id: 2, name: `Comedies` },
-  { id: 3, name: `Crime` },
-  { id: 4, name: `Documentary` },
-  { id: 5, name: `Dramas` },
-  { id: 6, name: `Horror` },
-  { id: 7, name: `Kids & Family` },
-  { id: 8, name: `Romance` },
-  { id: 9, name: `Sci-Fi` },
-  { id: 10, name: `Thrillers` }
+  { id: GenresMap.All, name: `All genres` },
+  { id: GenresMap.Comedy, name: `Comedies` },
+  { id: GenresMap.Crime, name: `Crime` },
+  { id: GenresMap.Documentary, name: `Documentary` },
+  { id: GenresMap.Drama, name: `Dramas` },
+  { id: GenresMap.Horror, name: `Horror` },
+  { id: GenresMap[`Kids & Family`], name: `Kids & Family` },
+  { id: GenresMap.Romance, name: `Romance` },
+  { id: GenresMap[`Sci-Fi`], name: `Sci-Fi` },
+  { id: GenresMap.Thriller, name: `Thrillers` }
 ];
 
-const MoviesFilter = () => {
+const MoviesFilter = ({ activeFilter, setActiveFilter }) => {
+  const handleFilter = (evt, id) => {
+    evt.preventDefault();
+    setActiveFilter(id);
+  };
+
   return (
     <ul className="catalog__genres-list">
       {filters.map((item) => (
         <li
           key={item.id}
           className={cx(`catalog__genres-item`, {
-            [`catalog__genres-item--active`]: item.id === 1
+            [`catalog__genres-item--active`]: item.id === activeFilter
           })}
         >
-          <a href="#" className="catalog__genres-link">
+          <a
+            href="#"
+            className="catalog__genres-link"
+            onClick={(evt) => handleFilter(evt, item.id)}
+          >
             {item.name}
           </a>
         </li>
@@ -32,5 +43,10 @@ const MoviesFilter = () => {
     </ul>
   );
 };
+MoviesFilter.propTypes = {
+  activeFilter: array.isRequired,
+  setActiveFilter: func.isRequired
+};
+
 
 export default MoviesFilter;
