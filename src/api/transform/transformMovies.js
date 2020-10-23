@@ -5,9 +5,9 @@ export const GenresMap = {
   "Documentary": 3,
   "Drama": 4,
   "Horror": 5,
-  "Kids & Family": 6,
+  "Family": 6,
   "Romance": 7,
-  "Sci-Fi": 8,
+  "SciFi": 8,
   "Thriller": 9
 };
 
