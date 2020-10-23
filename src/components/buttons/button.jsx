@@ -1,10 +1,10 @@
 import React from "react";
-import { string, node } from "prop-types";
+import { string, node, func } from "prop-types";
 import cx from "classnames";
 
-const Button = ({ className, children }) => {
+const Button = ({ className, children, onClick }) => {
   return (
-    <button className={cx(`btn`, className)} type="button">
+    <button className={cx(`btn`, className)} type="button" onClick={onClick}>
       {children}
     </button>
   );
@@ -12,7 +12,8 @@ const Button = ({ className, children }) => {
 
 Button.propTypes = {
   className: string,
-  children: node.isRequired
+  children: node.isRequired,
+  onClick: func
 };
 
 export default Button;

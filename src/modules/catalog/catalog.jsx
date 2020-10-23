@@ -6,8 +6,12 @@ import MoviesFilter from "../../components/movies-filter/movies-filter";
 import MoviesList from "../../components/movies-list/movies-list";
 import { GenresMap } from "../../api/transform/transformMovies";
 
+const DEFAULT_LIST_SIZE = 6;
+const ADDED_COUNT_TO_LIST = 4;
+
 const Catalog = ({ movies, fetchMoviesAsync }) => {
   const [list, setList] = useState([]);
+  const [listSize, setListSize] = useState(DEFAULT_LIST_SIZE);
   const [activeFilter, setActiveFilter] = useState(GenresMap.All);
 
   useEffect(() => {
@@ -25,11 +29,13 @@ const Catalog = ({ movies, fetchMoviesAsync }) => {
     <section className="catalog">
       <h2 className="catalog__title visually-hidden">Catalog</h2>
       <MoviesFilter activeFilter={activeFilter} setActiveFilter={setActiveFilter} />
-      <MoviesList movies={list} />
+      <MoviesList movies={list.slice(0, listSize)} />
 
-      <div className="catalog__more">
-        <ShowMoreButton />
-      </div>
+      {list.length > listSize && (
+        <div className="catalog__more">
+          <ShowMoreButton onClick={() => setListSize(listSize + ADDED_COUNT_TO_LIST)} />
+        </div>
+      )}
     </section>
   );
 };
