@@ -1,7 +1,5 @@
 import React from "react";
 
-import SimilarMovies from "../../modules/similar-movies/similar-movies";
-
 import SvgSprite from "../../components/svg-sprite/svg-sprite";
 import Header from "../../components/header/header";
 import Footer from "../../components/footer/footer";
@@ -9,6 +7,7 @@ import CardBackground from "../../components/card-background/card-background";
 import Poster from "../../components/poster/poster";
 import Tabs from "../../components/tabs/tabs";
 import CardManage from "../../components/card-manage/card-manage";
+import { SimilarMoviesContainer } from "../../modules/similar-movies/similar-movies-container";
 
 const DetailsPage = () => {
 
@@ -35,7 +34,7 @@ const DetailsPage = () => {
       </section>
 
       <div className="page-content">
-        <SimilarMovies />
+        <SimilarMoviesContainer />
         <Footer />
       </div>
     </>

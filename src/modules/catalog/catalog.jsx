@@ -1,27 +1,21 @@
 import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { array } from "prop-types";
 
 import ShowMoreButton from "../../components/buttons/show-more-button/show-more-button";
 import MoviesFilter from "../../components/movies-filter/movies-filter";
 import MoviesList from "../../components/movies-list/movies-list";
 import { GenresMap } from "../../api/transform/transformMovies";
 
-import { fetchMoviesAsync } from "../../store/movies/actions";
 
 const DEFAULT_LIST_SIZE = 6;
 const ADDED_COUNT_TO_LIST = 4;
 
-const Catalog = () => {
-  const movies = useSelector((state) => state.movies.list);
-  const dispatch = useDispatch();
-
+const Catalog = ({ movies }) => {
   const [list, setList] = useState([]);
   const [listSize, setListSize] = useState(DEFAULT_LIST_SIZE);
   const [activeFilter, setActiveFilter] = useState(GenresMap.All);
 
-  useEffect(() => {
-    dispatch(fetchMoviesAsync());
-  }, []);
+
   useEffect(() => {
     const filtered =
       activeFilter === GenresMap.All
@@ -43,6 +37,10 @@ const Catalog = () => {
       )}
     </section>
   );
+};
+
+Catalog.propTypes = {
+  movies: array
 };
 
 export default Catalog;
