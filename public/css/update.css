@@ -5,3 +5,7 @@
 .catalog__movies-list {
   min-height: 175px;
 }
+
+.movie-card {
+  z-index: 10;
+}

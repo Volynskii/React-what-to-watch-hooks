@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { string,func } from "prop-types";
 import cx from "classnames";
 
-import VideoPlayer from "@components/videoplayer/video-player/videoplayer";
+import VideoPlayer from "../../video/video";
 
 const MovieCard = ({ className, title, poster, trailer }) => {
   const [isPlaying, setPlaying] = useState(false);

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { number, string, bool } from "prop-types";
 
-const VideoPlayer = ({ width, height, poster, src, isPlaying }) => {
+const Video = ({ width, height, poster, src, isPlaying }) => {
   const videoRef = useRef(null);
 
   const [isLoading, setLoading] = useState(true);
@@ -42,7 +42,7 @@ const VideoPlayer = ({ width, height, poster, src, isPlaying }) => {
   );
 };
 
-VideoPlayer.propTypes = {
+Video.propTypes = {
   width: number.isRequired,
   height: number.isRequired,
   poster: string.isRequired,
@@ -50,4 +50,4 @@ VideoPlayer.propTypes = {
   isPlaying: bool.isRequired
 };
 
-export default VideoPlayer;
+export default Video;

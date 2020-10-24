@@ -4,6 +4,14 @@ const SvgSprite = () => {
   return (
     <div className="visually-hidden">
       <svg xmlns="http://www.w3.org/2000/svg">
+        <symbol id="play-s" viewBox="0 0 19 19">
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M0 0L19 9.5L0 19V0Z"
+            fill="#EEE5B5"
+          />
+        </symbol>
         <symbol id="add" viewBox="0 0 19 20">
           <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
             <polygon
