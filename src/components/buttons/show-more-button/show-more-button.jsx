@@ -13,7 +13,7 @@ const ShowMoreButton = ({ className, ...props }) => {
 };
 
 ShowMoreButton.propTypes = {
-  ...Button.propTypes
+
 };
 
 export default ShowMoreButton;

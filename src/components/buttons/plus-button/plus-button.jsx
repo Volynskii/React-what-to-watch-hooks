@@ -20,7 +20,7 @@ PlusButton.defaultProps = {
 };
 
 PlusButton.propTypes = {
-  ...Button.propTypes
+
 };
 
 export default PlusButton;

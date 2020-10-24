@@ -1,5 +1,5 @@
 import React from "react";
-import { array, func } from "prop-types";
+import { number, func } from "prop-types";
 import cx from "classnames";
 import { GenresMap } from "../../api/transform/transformMovies";
 
@@ -44,7 +44,7 @@ const MoviesFilter = ({ activeFilter, setActiveFilter }) => {
   );
 };
 MoviesFilter.propTypes = {
-  activeFilter: array.isRequired,
+  activeFilter: number.isRequired,
   setActiveFilter: func.isRequired
 };
 

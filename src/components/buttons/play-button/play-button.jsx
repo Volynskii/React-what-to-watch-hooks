@@ -16,7 +16,7 @@ const PlayButton = ({ className, ...props }) => {
 };
 
 PlayButton.propTypes = {
-  ...Button.propTypes
+
 };
 
 export default PlayButton;

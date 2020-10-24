@@ -1,10 +1,10 @@
 import * as types from "./types.js";
 import { transformMovies } from "../../api/transform/transformMovies";
-import { data } from "../../api/mocks";
 
-export const fetchMoviesAsync = () => (dispatch) => {
-  const movies = [...data];
-  dispatch(fillMovies(movies));
+export const fetchMoviesAsync = () => {
+  return {
+    type: types.FETCH_MOVIES_ASYNC
+  };
 };
 
 export const fillMovies = (movies) => {

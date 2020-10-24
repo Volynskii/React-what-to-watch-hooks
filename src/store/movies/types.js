@@ -1,1 +1,5 @@
+// ASYNC
+export const FETCH_MOVIES_ASYNC = `FETCH_MOVIES_ASYNC`;
+
+// SYNC
 export const FILL_MOVIES = `FILL_MOVIES`;
