@@ -5,5 +5,10 @@ export const api = {
     fetch() {
       return fetch.get(`/films`);
     }
+  },
+  auth: {
+    login(credentials) {
+      return fetch.post(`/login`, credentials);
+    }
   }
 };
