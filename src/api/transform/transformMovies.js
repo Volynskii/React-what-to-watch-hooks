@@ -14,8 +14,25 @@ export const GenresMap = {
 export const transformMovies = (movies) => {
   return movies.map((movie) => {
     return {
-      ...movie,
-      genreId: GenresMap[movie.genre]
+      id: movie.id,
+      name: movie.name,
+      posterImage: movie.poster_image,
+      previewImage: movie.preview_image,
+      backgroundImage: movie.background_image,
+      backgroundColor: movie.background_color,
+      genreId: GenresMap[movie.genre],
+      genre: movie.genre,
+      scores: movie.scores_count,
+      description: movie.description,
+      rating: movie.rating,
+      director: movie.director,
+      starring: movie.starring,
+      runTime: movie.run_time,
+      released: movie.released,
+      isFavorite: movie.isFavorite,
+      trailer: movie.video_link,
+      previewVideo: movie.preview_video_link,
+      poster: movie.poster
     };
   });
 };

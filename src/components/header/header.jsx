@@ -1,8 +1,9 @@
 import React from "react";
+import cx from "classnames";
 
-const Header = () => {
+const Header = ({ className, pageTitle }) => {
   return (
-    <header className="page-header movie-card__head">
+    <header className={cx(`page-header movie-card__head`, className)}>
       <div className="logo">
         <a className="logo__link">
           <span className="logo__letter logo__letter--1">W</span>
@@ -12,9 +13,18 @@ const Header = () => {
       </div>
 
       <div className="user-block">
-        <div className="user-block__avatar">
-          <img src="img/avatar.jpg" alt="User avatar" width="63" height="63" />
-        </div>
+        {pageTitle ? (
+          <h1 className="page-title user-page__title">{pageTitle}</h1>
+        ) : (
+          <div className="user-block__avatar">
+            <img
+              src="img/avatar.jpg"
+              alt="User avatar"
+              width="63"
+              height="63"
+            />
+          </div>
+        )}
       </div>
     </header>
   );

@@ -1,10 +1,10 @@
 import { put, apply } from "redux-saga/effects";
 import { api } from "../../../../api";
-import { fillUser, authenticate } from "../../actions";
+import { fillUser, authenticate, logout } from "../../actions";
 
-export function* loginWorker({ payload: credentials }) {
+export function* checkLoginWorker() {
   try {
-    const response = yield apply(api, api.auth.login, [credentials]);
+    const response = yield apply(api, api.auth.check);
 
     if (response.status !== 200) {
       throw new Error(`on fetch news`);
@@ -13,7 +13,8 @@ export function* loginWorker({ payload: credentials }) {
     yield put(fillUser(response.data));
     yield put(authenticate());
   } catch (error) {
+    yield put(logout());
     // eslint-disable-next-line no-console
-    console.log(error.message, `→ logins worker`);
+    console.log(error.message, `→ check login worker`);
   }
 }
