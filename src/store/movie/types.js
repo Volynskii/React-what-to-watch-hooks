@@ -1,0 +1,8 @@
+// ASYNC
+export const FETCH_MOVIE_ASYNC = `FETCH_MOVIE_ASYNC`;
+export const FETCH_COMMENTS_ASYNC = `FETCH_COMMENTS_ASYNC`;
+
+// SYNC
+export const FILL_MOVIE = `FILL_MOVIE`;
+export const RESET_MOVIE = `RESET_MOVIE`;
+export const FILL_COMMENTS = `FILL COMMENTS`;

@@ -1,8 +1,8 @@
 import { put, apply } from "redux-saga/effects";
 import { api } from "../../../../api";
-import { fillMovies } from "../../actions";
+import { fillMovie } from "../../actions";
 
-export function* fetchMoviesWorker() {
+export function* fetchMovieWorker({ payload: id }) {
   try {
     const response = yield apply(api, api.movies.fetch);
 
@@ -10,9 +10,11 @@ export function* fetchMoviesWorker() {
       throw new Error(`on fetch news`);
     }
 
-    yield put(fillMovies(response.data));
+    const movie = response.data.find((item) => item.id === Number(id));
+
+    yield put(fillMovie(movie));
   } catch (error) {
     // eslint-disable-next-line no-console
-    console.log(error.message, `→ fetch movies worker`);
+    console.log(error.message, `→ fetch movie worker`);
   }
 }
