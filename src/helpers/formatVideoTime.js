@@ -6,6 +6,12 @@ export const formatTime = (time) => {
     .join(`:`);
 };
 
+export const formatRunTime = (time) => {
+  const hours = Math.floor(time / 60);
+  const minutes = Math.floor(time % 60);
+  return `${hours}h ${minutes}m`;
+};
+
 export const formatVideoTime = (currentTime, durantion) => {
   return `${formatTime(currentTime)}/${formatTime(durantion)}`;
 };
