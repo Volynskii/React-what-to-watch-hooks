@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { string,func } from "prop-types";
+import { Link } from "react-router-dom";
 import cx from "classnames";
 
 import VideoPlayer from "../../video/video";
 
-const MovieCard = ({ className, title, poster, trailer }) => {
+const MovieCard = ({ className, id,  title, poster, trailer }) => {
   const [isPlaying, setPlaying] = useState(false);
 
   let timerId;
@@ -39,9 +40,13 @@ const MovieCard = ({ className, title, poster, trailer }) => {
         />
       </div>
       <h3 className="small-movie-card__title">
-        <a className="small-movie-card__link" href="movie-page.html">
+        <Link
+          to={`/movies/${id}`}
+          className="small-movie-card__link"
+          href="movie-page.html"
+        >
           {title}
-        </a>
+        </Link>
       </h3>
     </article>
   );

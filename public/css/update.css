@@ -9,3 +9,8 @@
 .movie-card {
   z-index: 10;
 }
+
+.player {
+  z-index: 20;
+  overflow: hidden;
+}

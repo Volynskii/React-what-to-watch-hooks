@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { GenresMap } from "../../api/transform/transformMovies";
+import { GenresMap } from "../../api/transform/transformMovie";
 
 const DEFAULT_LIST_SIZE = 6;
 const ADDED_COUNT_TO_LIST = 4;
