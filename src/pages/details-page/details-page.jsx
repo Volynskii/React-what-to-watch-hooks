@@ -30,8 +30,8 @@ const DetailsPage = () => {
     <>
       {isFull && (
         <VideoPlayer
-          name="Transpotting"
-          poster={`img/fantastic-beasts-the-crimes-of-grindelwald.jpg`}
+          name={movie.name}
+          poster={movie.previewImage}
           src={movie.trailer}
           onClose={() => setFull(false)}
         />
@@ -41,16 +41,18 @@ const DetailsPage = () => {
       <SvgSprite />
       <section className="movie-card movie-card--full">
         <div className="movie-card__hero">
-          <CardBackground />
-          <Header />
 
+          <Header />
           <div className="movie-card__wrap">
-            <CardManage
-              name={movie.name}
-              genre={movie.genre}
-              released={movie.released}
-              onPlayClick={() => setFull(true)}
-            />
+            <CardBackground src={movie.backgroundImage} />
+            <div className="movie-card__info">
+              <CardManage
+                name={movie.name}
+                genre={movie.genre}
+                released={movie.released}
+                onPlayClick={() => setFull(true)}
+              />
+            </div>
           </div>
         </div>
 

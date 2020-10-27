@@ -1,15 +1,16 @@
 import * as types from "./types";
-import { transformMovie } from "../../api/transform/transformMovie";
 
-export const fetchPromoAsync = () => {
-  return {
-    type: types.FETCH_PROMO_ASYNC
-  };
-};
+const initialState = {};
 
-export const fillPromo = (data) => {
-  return {
-    type: types.FILL_PROMO,
-    payload: transformMovie(data)
-  };
+export const promoReducer = (state = initialState, { type, payload }) => {
+  switch (type) {
+    case types.FILL_PROMO:
+      return {
+        ...state,
+        ...payload
+      };
+
+    default:
+      return state;
+  }
 };
