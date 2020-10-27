@@ -1,0 +1,5 @@
+// ASYNC
+export const FETCH_PROMO_ASYNC = `FETCH_PROMO_ASYNC`;
+
+// SYNC
+export const FILL_PROMO = `FILL_PROMO`;

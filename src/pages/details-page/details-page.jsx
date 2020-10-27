@@ -57,7 +57,7 @@ const DetailsPage = () => {
         <div className="movie-card__wrap movie-card__translate-top">
           <div className="movie-card__info">
             <Poster big={true} src={movie.posterImage} />
-            <Tabs  movie={movie} />
+            <Tabs movie={movie} />
           </div>
         </div>
       </section>
