@@ -8,8 +8,8 @@ const getCommentColumns = createSelector(
     (state) => state.movie.comments,
     (comments) => {
       return {
-        one: comments.slice(0, 2),
-        two: comments.slice(3, 5)
+        one: comments.slice(0, 3),
+        two: comments.slice(3, 6)
       };
     }
 );

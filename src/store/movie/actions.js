@@ -1,5 +1,5 @@
 import * as types from "./types.js";
-import { transformMovie } from "../../api/transform/transformMovie";
+import { transformMovie } from "../../api/transform/transform-movie";
 import { transformComments } from "../../api/transform/transform-comments";
 
 export const fetchMovieAsync = (id) => {

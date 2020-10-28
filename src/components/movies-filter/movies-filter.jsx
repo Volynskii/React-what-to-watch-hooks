@@ -1,7 +1,7 @@
 import React from "react";
 import { number, func } from "prop-types";
 import cx from "classnames";
-import { GenresMap } from "../../api/transform/transformMovie";
+import { GenresMap } from "../../api/transform/transform-movie";
 
 export const filters = [
   [GenresMap.All, `All genres`],

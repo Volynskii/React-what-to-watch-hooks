@@ -5,8 +5,11 @@ import SimilarMovies from "./similar-movies";
 import { fetchMoviesAsync } from "../../store/movies/actions";
 
 const selectSimilarMovies = createSelector(
-    (state) => state.movies.list,
-    (movies) => movies.slice(0, 4)
+    [(state) => state.movies.list, (state) => state.movie],
+    (movies, movie) =>
+      movies
+      .filter((item) => item.genreId === movie.genreId && item.id !== movie.id)
+      .slice(0, 4)
 );
 
 export const SimilarMoviesContainer = () => {

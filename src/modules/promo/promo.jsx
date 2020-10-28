@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
+import { useHistory } from "react-router-dom";
+
 import CardBackground from "../../components/card-background/card-background";
 import CardManage from "../../components/card-manage/card-manage";
 import Poster from "../../components/poster/poster";
@@ -11,10 +13,12 @@ const Promo = () => {
   const [isFull, setFull] = useState(false);
   const promo = useSelector((state) => state.promo);
   const dispatch = useDispatch();
+  const history = useHistory();
 
   useEffect(() => {
     dispatch(fetchPromoAsync());
   }, []);
+
   return (
     <>
       {isFull && (
@@ -34,6 +38,7 @@ const Promo = () => {
             genre={promo.genre}
             released={promo.released}
             onPlayClick={() => setFull(true)}
+            onAddReviewClick={() => history.push(`/movies/${promo.id}/review`)}
           />
         </div>
       </div>
