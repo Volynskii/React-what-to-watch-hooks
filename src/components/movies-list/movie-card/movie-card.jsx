@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { string,func } from "prop-types";
+import React, { useRef ,useState, useEffect } from "react";
+import { number ,string , func } from "prop-types";
 import { Link } from "react-router-dom";
 import cx from "classnames";
 
@@ -54,6 +54,7 @@ const MovieCard = ({ className, id,  title, poster, trailer }) => {
 
 MovieCard.propTypes = {
   className: string,
+  id: number.isRequired,
   title: string.isRequired,
   poster: string.isRequired,
   trailer: string.isRequired,
