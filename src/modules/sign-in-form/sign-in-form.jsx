@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
 import { loginAsync } from "../../store/auth/actions";
 
 const SignInForm = () => {
   const [email, setEmail] = useState(``);
   const [password, setPassword] = useState(``);
+  const error = useSelector((state) => state.auth.error);
   const dispatch = useDispatch();
 
   const onSubmit = (evt) => {
@@ -15,12 +16,7 @@ const SignInForm = () => {
   return (
     <div className="sign-in user-page__content">
       <form action="#" className="sign-in__form" onSubmit={onSubmit}>
-        <div className="sign-in__message">
-          <p>
-            We can’t recognize this email
-            <br /> and password combination. Please try again.
-          </p>
-        </div>
+        <div className="sign-in__message">{error && <p>{error}</p>}</div>
         <div className="sign-in__fields">
           <div className="sign-in__field">
             <input

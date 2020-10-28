@@ -31,3 +31,10 @@ export const logout = () => {
     type: types.LOGOUT
   };
 };
+
+export const emitAuthError = (error) => {
+  return {
+    type: types.EMIT_AUTH_ERROR,
+    payload: error
+  };
+};
