@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useRouteMatch } from "react-router-dom";
-import { checkLoginAsync } from "../../store/auth/actions";
+import Cookies from "js-cookie";
+import { checkLoginAsync, logout } from "../../store/auth/actions";
 import cx from "classnames";
 
 const Header = ({ className, pageTitle }) => {
@@ -12,7 +13,11 @@ const Header = ({ className, pageTitle }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(checkLoginAsync());
+    if (Cookies.get(`authTokenLocal`)) {
+      dispatch(checkLoginAsync());
+    } else {
+      dispatch(logout());
+    }
   }, []);
 
   return (

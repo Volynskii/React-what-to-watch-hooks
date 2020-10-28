@@ -1,4 +1,5 @@
 import { put, apply } from "redux-saga/effects";
+import Cookies from "js-cookie";
 import { api } from "../../../../api";
 import { fillUser, authenticate, logout } from "../../actions";
 
@@ -14,6 +15,7 @@ export function* checkLoginWorker() {
     yield put(authenticate());
   } catch (error) {
     yield put(logout());
+    Cookies.remove(`authTokenLocal`);
     // eslint-disable-next-line no-console
     console.log(error.message, `→ check login worker`);
   }
