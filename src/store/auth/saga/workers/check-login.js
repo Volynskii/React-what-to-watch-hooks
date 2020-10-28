@@ -7,7 +7,7 @@ export function* checkLoginWorker() {
     const response = yield apply(api, api.auth.check);
 
     if (response.status !== 200) {
-      throw new Error(`on fetch news`);
+      throw new Error(`on check login`);
     }
 
     yield put(fillUser(response.data));

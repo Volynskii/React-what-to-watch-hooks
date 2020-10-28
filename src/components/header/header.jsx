@@ -1,8 +1,20 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { Link, useRouteMatch } from "react-router-dom";
+import { checkLoginAsync } from "../../store/auth/actions";
 import cx from "classnames";
 
 const Header = ({ className, pageTitle }) => {
+  const user = useSelector((state) => state.auth.user);
+  const { url } = useRouteMatch();
+
+  const isAuthPage = url === `/auth`;
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(checkLoginAsync());
+  }, []);
+
   return (
     <header className={cx(`page-header movie-card__head`, className)}>
       <div className="logo">
@@ -14,19 +26,24 @@ const Header = ({ className, pageTitle }) => {
       </div>
 
       <div className="user-block">
-        {pageTitle ? (
+        {pageTitle && (
           <h1 className="page-title user-page__title">{pageTitle}</h1>
+        )}
+        {user ? (
+          <div className="user-block__avatar">
+            <img
+              src={`https://htmlacademy-react-2.appspot.com/${user.avatar_url}`}
+              alt={user.name}
+              width="63"
+              height="63"
+            />
+          </div>
         ) : (
-          <Link to="/auth">
-            <div className="user-block__avatar">
-              <img
-                src="img/avatar.jpg"
-                alt="User avatar"
-                width="63"
-                height="63"
-              />
-            </div>
-          </Link>
+          isAuthPage || (
+            <Link to="/auth" className="user-block__link">
+              Sign in
+            </Link>
+          )
         )}
       </div>
     </header>
