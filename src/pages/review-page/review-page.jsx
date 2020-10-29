@@ -57,9 +57,9 @@ const ReviewPage = () => {
 
   return (
     <>
-      {movie.error && (
+      {movie.movieError && (
         <Popup title="Create review error" onConfirm={onConfirmPopup}>
-          {movie.error}
+          {movie.movieError}
         </Popup>
       )}
       <section className="movie-card movie-card--full">

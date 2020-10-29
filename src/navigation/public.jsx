@@ -10,7 +10,7 @@ export const Public = () => {
     <Switch>
       <Route path="/" component={MainPage} exact />
       <Route path="/auth" component={SignInPage} />
-      <Route path="/movies/:id" component={DetailsPage} />
+      <Route path="/movies/:id" component={DetailsPage} exact />
       <Redirect to="/auth" />
     </Switch>
   );

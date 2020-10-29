@@ -4,7 +4,7 @@ const initialState = {
   user: null,
   isAuthenticated: false,
   isInitialized: false,
-  error: null
+  authError: null
 };
 
 export const authReducer = (state = initialState, { type, payload }) => {
@@ -28,13 +28,16 @@ export const authReducer = (state = initialState, { type, payload }) => {
 
     case types.LOGOUT:
       return {
-        ...initialState
+        ...state,
+        user: null,
+        isAuthenticated: false,
+        isInitialized: true
       };
 
     case types.EMIT_AUTH_ERROR: {
       return {
         ...state,
-        error: payload
+        authError: payload
       };
     }
 

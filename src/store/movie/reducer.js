@@ -4,7 +4,7 @@ import * as typesMovies from "../movies/types";
 const initialState = {
   comments: [],
   review: null,
-  error: null
+  movieError: null
 };
 
 export const movieReducer = (state = initialState, { type, payload }) => {
@@ -41,7 +41,7 @@ export const movieReducer = (state = initialState, { type, payload }) => {
     case types.EMIT_MOVIE_ERROR: {
       return {
         ...state,
-        error: payload
+        movieError: payload
       };
     }
 

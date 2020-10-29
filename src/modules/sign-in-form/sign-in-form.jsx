@@ -5,7 +5,7 @@ import { loginAsync } from "../../store/auth/actions";
 const SignInForm = () => {
   const [email, setEmail] = useState(``);
   const [password, setPassword] = useState(``);
-  const error = useSelector((state) => state.auth.error);
+  const error = useSelector((state) => state.auth.authError);
   const dispatch = useDispatch();
 
   const onSubmit = (evt) => {

@@ -1,7 +1,13 @@
 import { put, apply } from "redux-saga/effects";
 import Cookies from "js-cookie";
 import { api } from "../../../../api";
-import { fillUser, authenticate, logout, initialize } from "../../actions";
+import {
+  fillUser,
+  authenticate,
+  logout,
+  initialize,
+  emitAuthError
+} from "../../actions";
 
 export function* checkLoginWorker() {
   try {
@@ -16,8 +22,8 @@ export function* checkLoginWorker() {
   } catch (error) {
     yield put(logout());
     Cookies.remove(`authTokenLocal`);
-    // eslint-disable-next-line no-console
-    console.log(error.message, `→ check login worker`);
+    const loginError = (error.response && error.response.data) || {};
+    yield put(emitAuthError(loginError.error || error.message));
   } finally {
     yield put(initialize());
   }
