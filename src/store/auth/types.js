@@ -7,3 +7,4 @@ export const FILL_USER = `FILL_USER`;
 export const AUTHENTICATE = `AUTHENTICATE`;
 export const LOGOUT = `LOGOUT`;
 export const EMIT_AUTH_ERROR = `EMIT_AUTH_ERROR`;
+export const INITIALIZE = `INITIALIZE`;

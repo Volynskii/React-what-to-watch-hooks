@@ -3,6 +3,7 @@ import * as types from "./types";
 const initialState = {
   user: null,
   isAuthenticated: false,
+  isInitialized: false,
   error: null
 };
 
@@ -17,6 +18,12 @@ export const authReducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         isAuthenticated: true
+      };
+
+    case types.INITIALIZE:
+      return {
+        ...state,
+        isInitialized: true
       };
 
     case types.LOGOUT:

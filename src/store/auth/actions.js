@@ -32,6 +32,12 @@ export const logout = () => {
   };
 };
 
+export const initialize = () => {
+  return {
+    type: types.INITIALIZE
+  };
+};
+
 export const emitAuthError = (error) => {
   return {
     type: types.EMIT_AUTH_ERROR,
