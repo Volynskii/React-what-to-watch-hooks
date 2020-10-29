@@ -109,3 +109,7 @@
   min-height: 52px;
   color: tomato;
 }
+
+.catalog__text {
+  text-align: center;
+}

@@ -18,8 +18,15 @@ const Catalog = ({ movies }) => {
   return (
     <section className="catalog">
       <h2 className="catalog__title visually-hidden">Catalog</h2>
-      <MoviesFilter activeFilter={activeFilter} setActiveFilter={setActiveFilter} />
-      <MoviesList movies={list} />
+      <MoviesFilter
+        activeFilter={activeFilter}
+        setActiveFilter={setActiveFilter}
+      />
+      {list.length ? (
+        <MoviesList movies={list} />
+      ) : (
+        <p className="catalog__text">Nothing found</p>
+      )}
 
       {isShowMoreButtonVisible && (
         <div className="catalog__more">
