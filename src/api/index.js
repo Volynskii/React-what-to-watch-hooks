@@ -26,5 +26,17 @@ export const api = {
     fetch() {
       return fetch.get(`/films/promo`);
     }
+  },
+
+  favorite: {
+    fetch() {
+      return fetch.get(`/favorite`);
+    },
+    add(id) {
+      return fetch.post(`/favorite/${id}/1`);
+    },
+    remove(id) {
+      return fetch.post(`/favorite/${id}/0`);
+    }
   }
 };

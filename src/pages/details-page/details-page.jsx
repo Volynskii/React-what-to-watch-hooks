@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {useHistory, useRouteMatch } from "react-router-dom";
+import { useHistory, useRouteMatch } from "react-router-dom";
 
 import SvgSprite from "../../components/svg-sprite/svg-sprite";
 import Header from "../../components/header/header";
@@ -12,6 +12,10 @@ import CardManage from "../../components/card-manage/card-manage";
 import { SimilarMoviesContainer } from "../../modules/similar-movies/similar-movies-container";
 import VideoPlayer from "../../components/video-player-full/video-player";
 import { fetchMovieAsync, resetMovie } from "../../store/movie/actions";
+import {
+  addMovieToListAsync,
+  removeMovieFromList
+} from "../../store/movies/actions";
 import Loading from "../../components/loading/loading";
 
 const DetailsPage = () => {
@@ -31,6 +35,10 @@ const DetailsPage = () => {
   if (!movie.id) {
     return <Loading />;
   }
+
+  const handleAddFavorite = () => {
+    dispatch(addMovieToListAsync(id));
+  };
 
   return (
     <>
@@ -57,6 +65,7 @@ const DetailsPage = () => {
                 genre={movie.genre}
                 released={movie.released}
                 onPlayClick={() => setFull(true)}
+                onAddListClick={handleAddFavorite}
                 onAddReviewClick={() => history.push(`/movies/${id}/review`)}
               />
             </div>

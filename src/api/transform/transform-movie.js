@@ -28,7 +28,7 @@ export const transformMovie = (movie) => {
     starring: movie.starring,
     runtime: movie.run_time,
     released: movie.released,
-    isFavorite: movie.isFavorite,
+    isFavorite: movie.is_favorite,
     trailer: movie.video_link,
     previewVideo: movie.preview_video_link,
     poster: movie.poster
