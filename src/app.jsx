@@ -21,7 +21,7 @@ const App = () => {
   if (!isInitialized) {
     return <Loading />;
   }
-  
+
   return isAuthenticated ? <Private /> : <Public />;
 };
 

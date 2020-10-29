@@ -11,7 +11,7 @@ export const Public = () => {
       <Route path="/" component={MainPage} exact />
       <Route path="/auth" component={SignInPage} />
       <Route path="/movies/:id" component={DetailsPage} />
-      <Redirect to="/" />
+      <Redirect to="/auth" />
     </Switch>
   );
 };

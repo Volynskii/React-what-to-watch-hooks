@@ -11,7 +11,7 @@ const FavoritesPage = () => {
 
   useEffect(() => {
     dispatch(fetchFavoritesAsync());
-  });
+  }, []);
 
   return (
     <div className="user-page">

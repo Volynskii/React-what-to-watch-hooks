@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 import { Link, useRouteMatch } from "react-router-dom";
-import Cookies from "js-cookie";
-import { checkLoginAsync, logout } from "../../store/auth/actions";
+
 import cx from "classnames";
 
 const Header = ({ className, pageTitle }) => {
@@ -10,15 +9,6 @@ const Header = ({ className, pageTitle }) => {
   const { url } = useRouteMatch();
 
   const isAuthPage = url === `/auth`;
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (Cookies.get(`authTokenLocal`)) {
-      dispatch(checkLoginAsync());
-    } else {
-      dispatch(logout());
-    }
-  }, []);
 
   return (
     <header className={cx(`page-header movie-card__head`, className)}>
@@ -35,14 +25,16 @@ const Header = ({ className, pageTitle }) => {
           <h1 className="page-title user-page__title">{pageTitle}</h1>
         )}
         {user ? (
-          <div className="user-block__avatar">
-            <img
-              src={`https://htmlacademy-react-2.appspot.com/${user.avatar_url}`}
-              alt={user.name}
-              width="63"
-              height="63"
-            />
-          </div>
+          <Link to="/favorites">
+            <div className="user-block__avatar">
+              <img
+                src={`https://htmlacademy-react-2.appspot.com/${user.avatar_url}`}
+                alt={user.name}
+                width="63"
+                height="63"
+              />
+            </div>
+          </Link>
         ) : (
           isAuthPage || (
             <Link to="/auth" className="user-block__link">

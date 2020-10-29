@@ -8,7 +8,9 @@ const CardManage = ({
   name,
   genre,
   released,
+  isAdded,
   onPlayClick,
+  onAddListClick,
   onAddReviewClick
 }) => {
   return (
@@ -20,7 +22,11 @@ const CardManage = ({
       </p>
       <div className="movie-card__buttons">
         <PlayButton className="movie-card__button" onClick={onPlayClick} />
-        <PlusButton className="movie-card__button" isAdded={true} />
+        <PlusButton
+          className="movie-card__button"
+          isAdded={isAdded}
+          onClick={onAddListClick}
+        />
         <Button className="movie-card__button" onClick={onAddReviewClick}>
           Add review
         </Button>
