@@ -14,7 +14,7 @@ import VideoPlayer from "../../components/video-player-full/video-player";
 import { fetchMovieAsync, resetMovie } from "../../store/movie/actions";
 import {
   addMovieToListAsync,
-  removeMovieFromList
+  removeMovieFromListAsync
 } from "../../store/movies/actions";
 import Loading from "../../components/loading/loading";
 
@@ -37,7 +37,11 @@ const DetailsPage = () => {
   }
 
   const handleAddFavorite = () => {
-    dispatch(addMovieToListAsync(id));
+    if (movie.isFavorite) {
+      dispatch(removeMovieFromListAsync(id));
+    } else {
+      dispatch(addMovieToListAsync(id));
+    }
   };
 
   return (
@@ -64,6 +68,7 @@ const DetailsPage = () => {
                 name={movie.name}
                 genre={movie.genre}
                 released={movie.released}
+                isFavorite={movie.isFavorite}
                 onPlayClick={() => setFull(true)}
                 onAddListClick={handleAddFavorite}
                 onAddReviewClick={() => history.push(`/movies/${id}/review`)}

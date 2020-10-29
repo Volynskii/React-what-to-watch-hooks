@@ -51,6 +51,6 @@ export const addMovieToList = (movie) => {
 export const removeMovieFromList = (movieId) => {
   return {
     type: types.REMOVE_MOVIE_FROM_LIST,
-    payload: movieId
+    payload: Number(movieId)
   };
 };

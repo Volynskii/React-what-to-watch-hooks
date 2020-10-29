@@ -1,4 +1,5 @@
 import * as types from "./types";
+import * as typesMovies from "../movies/types";
 
 const initialState = {
   comments: [],
@@ -23,6 +24,18 @@ export const movieReducer = (state = initialState, { type, payload }) => {
     case types.RESET_MOVIE:
       return {
         ...initialState
+      };
+
+    case typesMovies.ADD_MOVIE_TO_LIST:
+      return {
+        ...state,
+        isFavorite: payload.id === state.id
+      };
+
+    case typesMovies.REMOVE_MOVIE_FROM_LIST:
+      return {
+        ...state,
+        isFavorite: payload.id === state.id
       };
 
     case types.EMIT_MOVIE_ERROR: {
