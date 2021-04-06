@@ -3,14 +3,17 @@ import cx from "classnames";
 
 import Button from "../button";
 
-const PlusButton = ({ className, isFavorite, ...props }) => {
+const PlusButton = ({ className, isAdded, ...props }) => {
+
   const plusButtonClassName = cx(`btn--list`, className);
+  const buttonTextContent = isAdded ? (` Remove from my list`) : (`Add to my list`);
+const svgSign = isAdded ? `#in-list` : `#add`;
   return (
     <Button className={plusButtonClassName} {...props}>
       <svg viewBox="0 0 19 20" width="19" height="20">
-        <use xlinkHref={isFavorite ? `#in-list` : `#add`}/>
+        <use xlinkHref={svgSign}/>
       </svg>
-      <span>My list</span>
+      <span>{buttonTextContent}</span>
     </Button>
   );
 };

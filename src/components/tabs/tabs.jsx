@@ -13,7 +13,7 @@ const TabsItems = {
   REVIEWS: `reviews`
 };
 
-const Tabs = ({movie}) => {
+const Tabs = ({ movie }) => {
   const [current, setCurrent] = useState(TabsItems.OVERVIEW);
 
   const handleTabClick = (evt, tab) => {

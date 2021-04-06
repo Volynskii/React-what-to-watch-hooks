@@ -39,6 +39,7 @@ const CardManage = ({
           className="movie-card__button"
           isAdded={isFavorite}
           onClick={handleAddToFavorite}
+
         />
         <Button className="movie-card__button" onClick={onAddReviewClick}>
           Add review

@@ -1,6 +1,17 @@
-# Личный проект «Что посмотреть» [![Build status][travis-image]][travis-url]
+# WHAT-TO-WATCH-HOOKS
 
-<a href="https://htmlacademy.ru/intensive/react"><img align="left" width="50" height="50" title="HTML Academy" src="https://up.htmlacademy.ru/static/img/intensive/react/logo-for-github.png"></a>
+### [Live Site](https://mystifying-curie-c553d8.netlify.app/)
 
-Репозиторий создан для обучения на профессиональном онлайн‑курсе «[JavaScript, уровень 3](https://htmlacademy.ru/intensive/react)» от [HTML Academy](https://htmlacademy.ru).
+![WHAT-TO-WATCH](https://i.ibb.co/dpGWzd6/REACT-WTW.png)
 
+
+## Introduction
+The project was created in the course of training on a professional
+ online course «[React, Development of complex client applications](https://htmlacademy.ru/intensive/react)»
+  from [HTML Academy](https://htmlacademy.ru).
+
+WHAT-TO-WATCH is a new generation online cinema where you can watch movies,leave reviews, watch movie 
+rating and add favorite movies to your page!
+
+Setup:
+- run ``` npm start``` to start the development server
